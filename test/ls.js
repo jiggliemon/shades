@@ -1,7 +1,7 @@
 var ls = require('../ls')
 var assert = require('assert')
 
-function getStrings (arr) {
+function filterStrings (arr) {
 	return arr.filter(function ( item ) {
 		return typeof item == 'string'
 	})
@@ -13,6 +13,10 @@ function contains () {
 	return args.every(function (el) {
 		return self.indexOf(el) !== -1
 	})
+}
+
+function filterObjects (item) { 
+	return typeof item == 'object'
 }
 
 var dir1 = './test/some-dir'
@@ -27,7 +31,7 @@ describe('#ls', function () {
 
 	it('should list the files as strings', function () {
 		var fileList = ['./test/some-dir/hello.txt','./test/some-dir/there.txt']
-		assert.ok( contains.call( getStrings(listing[dir1]) ),fileList)
+		assert.ok( contains.apply( filterStrings(listing[dir1]) ), fileList)
 	})
 
 	it('should take multiple arguments for multiple directories to search', function () {
@@ -44,9 +48,15 @@ describe('#ls', function () {
 	})
 
 	// Listing only images and sub directories
-	describe('ls#img', function (	) {
+	describe('ls#images', function (	) {
 		it('should only list images and subdirectories', function () {
-			var imageList = []
+			var directoryImages = ls.images(dir1)[dir1]
+			var imageList = ['./test/some-dir/smajlik1.gif','./test/some-dir/smajlik2.gif']
+			// console.log(imageList)
+			// console.log(ls.images(dir1)[dir1])
+			// console.log()
+			assert.ok(contains.apply(filterStrings(directoryImages, imageList)))
+			assert.equal(1, directoryImages.filter(filterObjects).length)
 		})
 	})
 
