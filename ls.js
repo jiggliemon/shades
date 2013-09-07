@@ -90,5 +90,6 @@ ls.configure = function (key, val) {
 
 
 ls.images = imgs
+ls.prependPath = prependPath
 
 module.exports = ls 
