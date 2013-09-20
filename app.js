@@ -1,5 +1,3 @@
-"use strict"
-
 var connect = require('connect')
 var http = require('http')
 var lessMiddleware = require('less-middleware')
