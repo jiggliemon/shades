@@ -1,0 +1,4 @@
+{
+	"/users":"users#index",
+	"/user/:id":"users#show"
+}

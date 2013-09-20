@@ -1,0 +1,10 @@
+{
+  "name":"shades",
+  "version":"0.0.1",
+  "dependencies":{
+    "connect":"*",
+    "less-middleware":"*",
+    "lodash":"*",
+    "yayo":"*"
+  }        
+}

@@ -1,0 +1,13 @@
+{
+   "/attributes": {
+   	 "module":"attributes"
+   	,"controller":"attributes"
+   	,"method":"index"
+  }
+  ,"/attribute/:id": {
+     "GET":"attributes#attributes.show"
+    ,"PUT":"attributes#attribute.update"
+    ,"DELETE":"attributes#attribute.destroy"
+    ,"POST":"attributes#attribute.create"
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"/session":{
+		"module":"attributes",
+		"controller":"attributes",
+		"method":"method",
+		"arguments":[]
+	},
+	"/attributes":true
+}

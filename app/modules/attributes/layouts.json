@@ -1,0 +1,16 @@
+[{
+	"/attributes": {
+		"refrence": "root",
+		"actions": [
+			["setLayout","one-column"]
+		],
+		"children": [
+			{
+				"name":"attributes.list",
+				"type":"attributes/attributes",
+				"template":"$relative/new/template/path.tmpl",
+				"actions": ["setId", null]
+			}
+		]
+	}
+}]

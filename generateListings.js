@@ -11,6 +11,11 @@ var root = './public/images/shades'
 var shades = fs.readdirSync(root).map(ls.prependPath(root))
 var imageListing = ls.images.apply(null, shades)
 
+
+var args = process.argv.slice(2)
+
+
+
 function writeListingFile ( dirObject ) {
 	var keys = Object.keys(dirObject)
 	keys.forEach(function (path) {
